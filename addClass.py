@@ -31,19 +31,19 @@ def main():
     PATHNAME = ''
     for s in sl:
         PATHNAME = PATHNAME + s + '/'
-    if PATHNAME[-1] == '/':
+    if sl.__len__()>0 and PATHNAME[-1] == '/':
         PATHNAME = PATHNAME[:-1]
 
     DEFNAME = ''
     for s in sl:
         DEFNAME = DEFNAME + s + '_'
-    if DEFNAME[-1] == '/':
+    if sl.__len__()>0 and DEFNAME[-1] == '/':
         DEFNAME = DEFNAME[:-1]
 
     SPACENAME = ''
     for s in sl:
         SPACENAME = SPACENAME + s + '::'
-    while SPACENAME[-1] == ':':
+    while sl.__len__()>0 and SPACENAME[-1] == ':':
         SPACENAME = SPACENAME[:-1]
 
     # include and src path
@@ -71,7 +71,7 @@ def main():
 
     # write *.h file
     include_file_object = open(INCLUDE_PATH+'/'+CLASSNAME+'.h', 'w')
-    include_file_object.write('#ifndef _'+DEFNAME+CLASSNAME+'_H\n')
+    include_file_object.write('#ifndef _'+DEFNAME+CLASSNAME+'_H_\n')
     include_file_object.write('#define _'+DEFNAME+CLASSNAME+'_H_\n')
 
     indent = 0
@@ -104,7 +104,8 @@ def main():
         src_file_object.write('#include "'+CLASSNAME+'.h"\n')
     else:
         src_file_object.write('#include <'+PATHNAME+'/'+CLASSNAME+'.h>\n')
-    src_file_object.write('using namespace '+SPACENAME+';\n')
+    if SPACENAME != '':
+        src_file_object.write('using namespace '+SPACENAME+';\n')
     src_file_object.write('\n')
     src_file_object.close()
 
