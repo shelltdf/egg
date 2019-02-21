@@ -1,0 +1,18 @@
+SET(NIUBI_SETUP_TARGET_NAME Window_win32)
+#add_definitions(-DEGG_RUNTIME_LIBRARY)
+
+SET(NIUBI_SETUP_HEADERS
+
+)
+SET(NIUBI_SETUP_SOURCES
+    
+    Window_win32.cpp
+)
+
+NIUBI_SETUP_PLUGINS(ON)
+target_link_libraries(${NIUBI_SETUP_TARGET_NAME} 
+        eggRuntime eggEngine
+        )
+NIUBI_SETUP_INSTALL()
+NIUBI_SETUP_INSTALL_INCLUDE()
+NIUBI_SETUP_DOCUMENT()

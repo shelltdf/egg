@@ -34,13 +34,16 @@ MACRO(NIUBI_SETUP_TEST V)
 ENDMACRO(NIUBI_SETUP_TEST)
 
 if( GTest_FOUND )
-ADD_SUBDIRECTORY(test_eggruntime)
-# ADD_SUBDIRECTORY(test_eggengine)
+
+    ADD_SUBDIRECTORY(test_eggruntime)
+    ADD_SUBDIRECTORY(testCLR)
+    ADD_SUBDIRECTORY(testCMD)
+    ADD_SUBDIRECTORY(testScript)
+
+    if( NOT BUILD_EGG_ONLY)
+        ADD_SUBDIRECTORY(test_eggengine)
+    endif( NOT BUILD_EGG_ONLY)
+
 endif( GTest_FOUND )
-
-
-ADD_SUBDIRECTORY(testCLR)
-ADD_SUBDIRECTORY(testCMD)
-ADD_SUBDIRECTORY(testScript)
 
 

@@ -1,7 +1,9 @@
 
 ADD_SUBDIRECTORY(egg)
 ADD_SUBDIRECTORY(eggNet)
-# ADD_SUBDIRECTORY(eggEngine)
-# ADD_SUBDIRECTORY(eggEditor)
-# ADD_SUBDIRECTORY(eggApplication)
 
+if( NOT BUILD_EGG_ONLY)
+    ADD_SUBDIRECTORY(eggEngine)
+    ADD_SUBDIRECTORY(eggEditor)
+    ADD_SUBDIRECTORY(eggApplication)
+endif( NOT BUILD_EGG_ONLY)
