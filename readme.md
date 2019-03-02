@@ -1,4 +1,4 @@
-![logo](doc\logo.png)
+![logo](doc/logo.png)
 
 # 概述
 
