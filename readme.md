@@ -1,4 +1,4 @@
-![logo](d:\Users\will\Desktop\egg\doc\logo.png)
+![logo](doc\logo.png)
 
 # 概述
 
@@ -11,6 +11,8 @@ egg 并不是什么缩写。中文意思就是"卵"。
 # 模块文档
 
 [egg核心模块](doc/egg.md)
+
 [虚拟文件系统](doc/vfs.md)
+
 [资源管理模块](doc/asset.md)
 
