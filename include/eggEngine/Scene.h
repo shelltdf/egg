@@ -1,7 +1,7 @@
 #ifndef NIUBI_SG_SCENE_H
 #define NIUBI_SG_SCENE_H
 
-#include <eggRuntime/ref_ptr.h>
+#include <egg/ref_ptr.h>
 #include <eggEngine/SceneNode.h>
 #include <eggEngine/Resource.h>
 

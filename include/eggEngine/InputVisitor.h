@@ -3,7 +3,7 @@
 
 #include <eggEngine/Export.h>
 
-#include <eggRuntime/NodeVisitor.h>
+#include <egg/NodeVisitor.h>
 #include <eggEngine/Window.h>
 
 namespace egg

@@ -1,8 +1,8 @@
 
 #include <eggApplication/Export.h>
 
-#include <eggRuntime/Runtime.h>
-#include <eggRuntime/Module.h>
+#include <egg/Runtime.h>
+#include <egg/Module.h>
 #include <eggEngine/Engine.h>
 #include <eggEngine/RenderWindow.h>
 

@@ -1,7 +1,7 @@
 #ifndef _EGG_Save_Load_H_
 #define _EGG_Save_Load_H_
 
-#include <eggRuntime/Runtime.h>
+#include <egg/Runtime.h>
 #include <eggEngine/Engine.h>
 #include <eggEngine/RenderWindow.h>
 #include <eggEngine/Animation.h>

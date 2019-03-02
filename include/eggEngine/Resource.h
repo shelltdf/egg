@@ -8,8 +8,8 @@
 
 //#include <eggBase/Public.h>
 //#include <eggRuntime/Object.h>
-#include <eggRuntime/Node.h>
-#include <eggRuntime/NodeVisitor.h>
+#include <egg/Node.h>
+#include <egg/NodeVisitor.h>
 
 namespace egg
 {
@@ -278,7 +278,8 @@ private:\
             path = egg::Path::relative(
                 //this->uniform_path.getPathMel(false,true).c_str() 
                 this_path.getPathMel(false,true).c_str() 
-                , path.getPathMel(false,true).c_str());
+                , path.getPathMel(false,true).c_str()
+                ,true );
         }
         ser->writeString(os,path.getPathMel());
     }

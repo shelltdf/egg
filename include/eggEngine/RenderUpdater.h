@@ -1,7 +1,7 @@
 #ifndef _EGG_RenderUpdater_H_
 #define _EGG_RenderUpdater_H_
 
-#include <eggRuntime/Object.h>
+#include <egg/Object.h>
 
 
 namespace egg

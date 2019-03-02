@@ -1,7 +1,7 @@
 #ifndef _NSG_DATA_DEFINE_H_
 #define _NSG_DATA_DEFINE_H_
 
-#include <eggRuntime/DataType.h>
+#include <egg/DataType.h>
 
 namespace egg
 {

@@ -1,7 +1,7 @@
 
 #include <eggEngine/ResourceManager.h>
 
-#include <eggRuntime/Platform.h>
+#include <egg/Platform.h>
 
 #if 1
 

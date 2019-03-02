@@ -1,8 +1,8 @@
 
 #include "NativeArchive.h"
 
-#include <eggRuntime/Path.h>
-#include <eggRuntime/Platform.h>
+#include <egg/Path.h>
+#include <egg/Platform.h>
 
 
 using namespace egg;

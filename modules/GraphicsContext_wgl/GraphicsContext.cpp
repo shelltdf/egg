@@ -1,7 +1,7 @@
 
-#include <eggRuntime/Platform.h>
-#include <eggRuntime/Module.h>
-#include <eggRuntime/Runtime.h>
+#include <egg/Platform.h>
+#include <egg/Module.h>
+#include <egg/Runtime.h>
 #include <eggEngine/Window.h>
 #include <eggEngine/GraphicsContext.h>
 #include <eggEngine/Renderer.h>

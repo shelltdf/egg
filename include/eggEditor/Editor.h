@@ -3,8 +3,8 @@
 
 #include <eggEditor/Export.h>
 
-#include <eggRuntime/Singleton.h>
-#include <eggRuntime/Object.h>
+#include <egg/Singleton.h>
+#include <egg/Object.h>
 
 #include <eggEditor/Panel.h>
 

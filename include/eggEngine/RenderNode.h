@@ -3,8 +3,8 @@
 
 #include <eggEngine/Export.h>
 
-#include <eggRuntime/Math.h>
-#include <eggRuntime/Node.h>
+#include <egg/Math.h>
+#include <egg/Node.h>
 #include <eggEngine/Geometry.h>
 #include <eggEngine/Material.h>
 #include <eggEngine/RenderVisitor.h>

@@ -225,7 +225,7 @@ SET(NIUBI_SETUP_SOURCES
 
 NIUBI_SETUP_LIBRARY(ON)
 target_link_libraries(${NIUBI_SETUP_TARGET_NAME} 
-        eggRuntime
+        egg
         )
 NIUBI_SETUP_INSTALL()
 NIUBI_SETUP_INSTALL_INCLUDE()

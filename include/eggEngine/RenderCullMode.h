@@ -2,7 +2,7 @@
 #define _EGG_RenderCullMode_H_
 
 #include <eggEngine/Export.h>
-#include <eggRuntime/Object.h>
+#include <egg/Object.h>
 
 namespace egg
 {

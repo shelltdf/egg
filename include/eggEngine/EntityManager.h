@@ -1,7 +1,7 @@
 #ifndef _EGG_EntityManager_H_
 #define _EGG_EntityManager_H_
 
-#include <eggRuntime/Runtime.h>
+#include <egg/Runtime.h>
 #include <eggEngine/Engine.h>
 #include <eggEngine/RenderWindow.h>
 #include <eggEngine/Animation.h>

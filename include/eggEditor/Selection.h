@@ -2,7 +2,7 @@
 #define _EGG_Selection_H_
 
 #include <eggEditor/Export.h>
-#include <eggRuntime/Object.h>
+#include <egg/Object.h>
 
 namespace egg
 {

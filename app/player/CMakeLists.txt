@@ -12,7 +12,7 @@ SET(NIUBI_SETUP_SOURCES
 
 NIUBI_SETUP_EXECUTABLE(ON)
 target_link_libraries(${NIUBI_SETUP_TARGET_NAME} 
-        eggRuntime eggEngine eggApplication
+        egg eggEngine eggApplication
 
 		Window_win32
 		Renderer_glcore

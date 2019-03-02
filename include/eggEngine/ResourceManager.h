@@ -6,8 +6,8 @@
 #include <map>
 
 //#include <eggBase/Public.h>
-#include <eggRuntime/Log.h>
-#include <eggRuntime/SystemArg.h>
+#include <egg/Log.h>
+#include <egg/SystemArg.h>
 
 #include <eggEngine/Resource.h>
 #include <eggEngine/VirtualFileSystem.h>

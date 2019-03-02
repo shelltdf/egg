@@ -10,8 +10,8 @@
 //#include <eggEngine/SceneNode.h>
 //#include <eggEngine/Components/Camera.h>
 //#include <eggEngine/Composer.h>
-#include <eggRuntime/NodeVisitor.h>
-#include <eggRuntime/Math.h>
+#include <egg/NodeVisitor.h>
+#include <egg/Math.h>
 #include <eggEngine/Matrix.h>
 
 namespace egg

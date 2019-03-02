@@ -1,7 +1,7 @@
 
 #include <eggEditor/Editor.h>
-#include <eggRuntime/Module.h>
-#include <eggRuntime/Runtime.h>
+#include <egg/Module.h>
+#include <egg/Runtime.h>
 
 
 

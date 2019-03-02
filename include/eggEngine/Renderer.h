@@ -11,8 +11,8 @@
 //#include <eggEngine/Material.h>
 #include <eggEngine/Geometry.h>
 //#include <eggEngine/Texture.h>
-#include <eggRuntime/Singleton.h>
-#include <eggRuntime/Factory.h>
+#include <egg/Singleton.h>
+#include <egg/Factory.h>
 
 #include <eggEngine/RenderState.h>
 #include <eggEngine/DataDefine.h>

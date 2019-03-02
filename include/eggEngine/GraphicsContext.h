@@ -4,10 +4,10 @@
 //#include <egg/Public.h>
 #include <eggEngine/Export.h>
 
-#include <eggRuntime/Object.h>
-#include <eggRuntime/Singleton.h>
-#include <eggRuntime/Factory.h>
-#include <eggRuntime/DataType.h>
+#include <egg/Object.h>
+#include <egg/Singleton.h>
+#include <egg/Factory.h>
+#include <egg/DataType.h>
 
 namespace egg
 {

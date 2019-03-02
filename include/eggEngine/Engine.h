@@ -3,8 +3,8 @@
 
 #include <eggEngine/Export.h>
 
-#include <eggRuntime/Singleton.h>
-#include <eggRuntime/Object.h>
+#include <egg/Singleton.h>
+#include <egg/Object.h>
 
 #include <eggEngine/SceneNode.h>
 #include <eggEngine/Material.h>

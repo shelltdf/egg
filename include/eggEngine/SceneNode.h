@@ -2,7 +2,7 @@
 #define NIUBI_SG_SCENENODE_H
 
 //#include <nbBase/Referenced>
-#include <eggRuntime/Node.h>
+#include <egg/Node.h>
 #include <eggEngine/Component.h>
 
 namespace egg

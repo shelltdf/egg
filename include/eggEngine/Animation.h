@@ -3,7 +3,7 @@
 
 #include <eggEngine/Resource.h>
 
-#include <eggRuntime/Math.h>
+#include <egg/Math.h>
 #include <eggEngine/Matrix.h>
 
 namespace egg

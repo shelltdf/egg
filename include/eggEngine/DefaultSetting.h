@@ -1,9 +1,9 @@
 #ifndef _NSG_DefaultSetting_H_
 #define _NSG_DefaultSetting_H_
 
-#include <eggRuntime/DataType.h>
-#include <eggRuntime/Object.h>
-#include <eggRuntime/Singleton.h>
+#include <egg/DataType.h>
+#include <egg/Object.h>
+#include <egg/Singleton.h>
 
 namespace egg
 {

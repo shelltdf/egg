@@ -4,11 +4,11 @@
 //#include <nbBase/Public.h>
 #include <eggEngine/Export.h>
 
-#include <eggRuntime/Log.h>
-#include <eggRuntime/SystemArg.h>
-#include <eggRuntime/Path.h>
-#include <eggRuntime/ref_ptr.h>
-#include <eggRuntime/Singleton.h>
+#include <egg/Log.h>
+#include <egg/SystemArg.h>
+#include <egg/Path.h>
+#include <egg/ref_ptr.h>
+#include <egg/Singleton.h>
 
 #include <string>
 #include <vector>

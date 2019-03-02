@@ -12,7 +12,7 @@ SET(TEST_SOURCES
 
 NIUBI_SETUP_TEST(ON)
 target_link_libraries(${TEST_NAME} 
-        eggRuntime eggEngine
+        egg eggEngine
         )
 NIUBI_SETUP_INSTALL()
 

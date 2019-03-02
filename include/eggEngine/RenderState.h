@@ -8,7 +8,7 @@
 #include <map>
 #include <stack>
 
-#include <eggRuntime/Object.h>
+#include <egg/Object.h>
 //#include <eggEngine/Pass.h>
 
 

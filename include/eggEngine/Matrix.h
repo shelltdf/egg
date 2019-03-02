@@ -2,7 +2,7 @@
 #ifndef _EGG_ENGINE_MATRIX_H_
 #define _EGG_ENGINE_MATRIX_H_
 
-#include <eggRuntime/Math.h>
+#include <egg/Math.h>
 
 //#include <vmmlib/frustum.hpp>
 //#include <vmmlib/matrix.hpp>

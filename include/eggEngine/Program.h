@@ -15,7 +15,7 @@
 #include <eggEngine/XML.h>
 #include <eggEngine/Renderer.h>
 
-#include <eggRuntime/DataType.h>
+#include <egg/DataType.h>
 
 
 #if 0

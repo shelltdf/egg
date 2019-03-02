@@ -10,7 +10,7 @@
 #include <eggEngine/DataDefine.h>
 #include <eggEngine/Resource.h>
 //#include <eggEngine/RenderState.h>
-#include <eggRuntime/DataType.h>
+#include <egg/DataType.h>
 #include <eggEngine/Renderer.h>
 
 namespace egg

@@ -4,9 +4,9 @@
 //#include <nbBase/Public.h>
 #include <string>
 
-#include <eggRuntime/Math.h>
-#include <eggRuntime/Object.h>
-#include <eggRuntime/Node.h>
+#include <egg/Math.h>
+#include <egg/Object.h>
+#include <egg/Node.h>
 #include <eggEngine/View.h>
 
 #include <eggEngine/Resource.h>

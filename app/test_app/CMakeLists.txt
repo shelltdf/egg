@@ -43,7 +43,7 @@ ENDIF(USE_OSGEARTH)
 
 NIUBI_SETUP_EXECUTABLE(ON)
 target_link_libraries(${NIUBI_SETUP_TARGET_NAME} 
-        eggRuntime eggEngine eggApplication
+        egg eggEngine eggApplication
         ${EXT_LIBRARY}
 
 		Window_win32
