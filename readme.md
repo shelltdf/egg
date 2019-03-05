@@ -8,6 +8,18 @@ egg 并不是什么缩写。中文意思就是"卵"。
 
 不过现在的定位是两个：egg核心作为一个简单的c++基础功能库，第二是轻量级完整的移动引擎。
 
+# 编译流程
+
+为了开发方便直接和vcpkg的最新版本联动。
+```
+vcpkg install gtest
+vcpkg install glew
+vcpkg install eigen3
+vcpkg install stb
+vcpkg install rapidxml
+vcpkg install imgui
+```
+
 # 模块文档
 
 [egg核心模块](doc/egg.md)

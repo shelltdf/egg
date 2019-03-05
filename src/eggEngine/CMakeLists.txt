@@ -137,9 +137,9 @@ SET(NIUBI_3rdParty_SOURCES
     ${HEADER_PATH}/ImageIO.h
     
     ${HEADER_PATH}/IMGUI.h
-    ${PROJECT_SOURCE_DIR}/3rdParty/imgui-master/imgui.cpp
-    ${PROJECT_SOURCE_DIR}/3rdParty/imgui-master/imgui_draw.cpp
-    ${PROJECT_SOURCE_DIR}/3rdParty/imgui-master/imgui_demo.cpp
+    # ${PROJECT_SOURCE_DIR}/3rdParty/imgui-master/imgui.cpp
+    # ${PROJECT_SOURCE_DIR}/3rdParty/imgui-master/imgui_draw.cpp
+    # ${PROJECT_SOURCE_DIR}/3rdParty/imgui-master/imgui_demo.cpp
 )
 SOURCE_GROUP(
     "_3rdParty"

@@ -1,7 +1,5 @@
 /bin
 /bin64
 /build
-/3rdParty/include
-/3rdParty/bin
-/3rdParty/lib
+/3rdParty
 /.vscode

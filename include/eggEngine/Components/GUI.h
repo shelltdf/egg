@@ -48,7 +48,7 @@ namespace egg
             | ImGuiWindowFlags_NoSavedSettings
             | ImGuiWindowFlags_NoFocusOnAppearing
             | ImGuiWindowFlags_NoNav
-            | ImGuiWindowFlags_ResizeFromAnySide
+            //| ImGuiWindowFlags_ResizeFromAnySide
             | ImGuiWindowFlags_NoTitleBar
         ))
         {
@@ -339,11 +339,11 @@ namespace egg
             io.DisplayFramebufferScale = ImVec2(1, 1);
 
             // ‰»Î Û±Í
-            if (io.WantMoveMouse)
-            {
-                //glfwSetCursorPos(g_Window, (double)io.MousePos.x, (double)io.MousePos.y);   // Set mouse position if requested by io.WantMoveMouse flag (used when io.NavMovesTrue is enabled by user and using directional navigation)
-            }
-            else
+            //if (io.WantMoveMouse)
+            //{
+            //    //glfwSetCursorPos(g_Window, (double)io.MousePos.x, (double)io.MousePos.y);   // Set mouse position if requested by io.WantMoveMouse flag (used when io.NavMovesTrue is enabled by user and using directional navigation)
+            //}
+            //else
             {
                 //double mouse_x, mouse_y;
                 //glfwGetCursorPos(g_Window, &mouse_x, &mouse_y);
