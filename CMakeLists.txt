@@ -42,6 +42,8 @@ FIND_PACKAGE(OpenGL)
 FIND_PACKAGE(fbx)
 FIND_PACKAGE(imgui)
 FIND_PACKAGE(glew)
+FIND_PACKAGE(Eigen)
+FIND_PACKAGE(rapidxml)
 # FIND_PACKAGE(PhysX3)
 FIND_PACKAGE(eigen3)
 
@@ -273,13 +275,16 @@ SET( _3RDPARTY_INCLUDE_DIR ${_3RDPARTY_INCLUDE_DIR} ${PROJECT_SOURCE_DIR}/3rdPar
 SET( _3RDPARTY_INCLUDE_DIR ${_3RDPARTY_INCLUDE_DIR} ${PROJECT_SOURCE_DIR}/3rdParty/imgui-master/)
 #MESSAGE( WARING ${_3RDPARTY_INCLUDE_DIR})      #工程目录
 
-include_directories(${_3RDPARTY_INCLUDE_DIR})
+# include_directories(${_3RDPARTY_INCLUDE_DIR})
 
 add_definitions(-DCMAKE_DEBUG_POSTFIX="'${CMAKE_DEBUG_POSTFIX}'")
 
 if(EMSCRIPTEN)
 add_definitions(-DEMSCRIPTEN)
 endif(EMSCRIPTEN)
+
+include_directories(${EIGEN_INCLUDE_DIR} )
+include_directories(${rapidxml_INCLUDE_DIR} )
 
 #核心
 ADD_SUBDIRECTORY(src)
