@@ -61,7 +61,8 @@ void ObjectManager::registerDefaultObjectClass()
 }
 
 
-std::set< observer_ptr<Object> > Object::Objects;
+//std::set< ref_ptr<Object> > Object::Objects;
+std::set< Object* > Object::Objects;
 
 std::string Object::getUniformName(Object* self, std::string name)
 {
@@ -71,7 +72,7 @@ std::string Object::getUniformName(Object* self, std::string name)
     std::set< std::string > name_list;
     for (auto it = Objects.begin(); it != Objects.end(); it++)
     {
-        ref_ptr<Object> s = (*it).get();
+        ref_ptr<Object> s = (*it);
 
         std::string n = s->getName();
         if (s.get() != self) name_list.insert(n);
@@ -131,11 +132,29 @@ void Object::addObject(Object* object)
 
 void Object::delObject(Object* object)
 {
+#if 1
     auto it = Objects.find(object);
     if (it != Objects.end())
     {
         Objects.erase(it);
     }
+#else
+    for (auto it = Objects.begin(); it != Objects.end(); it++)
+    {
+        ref_ptr<Object> s = it->get();
+        ref_ptr<Object> s2 (object);
+
+        //std::string n = s->getName();
+        if (s.get() == s2.get())
+        {
+            Objects.erase(it);
+        }
+
+        //∑¿÷π»ı÷∏’Î±ª Õ∑≈
+        s.release();
+        s2.release();
+    }
+#endif
 }
 
 //void Object::cleanup()

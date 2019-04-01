@@ -1,6 +1,8 @@
 SET(TEST_NAME test_eggruntime)
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
+include_directories(${GTEST_INCLUDE_DIR})
+
 SET(TEST_SOURCES
     
 	test_datatype.h

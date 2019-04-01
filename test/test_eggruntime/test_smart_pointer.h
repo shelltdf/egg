@@ -1,5 +1,6 @@
 
 #include <egg/ref_ptr.h>
+#include <egg/Object.h>
 
 #include <vector>
 #include <set>
@@ -13,9 +14,37 @@ class MyClass
 {
 public:
     MyClass() { count++; }
-    ~MyClass() { count--; }
+    virtual ~MyClass() { count--; }
 private:
 };
+
+class MyClassA
+    :public MyClass
+{
+public:
+    MyClassA() {  }
+    virtual ~MyClassA() {  }
+private:
+};
+
+class MyClassB
+    :public MyClass
+{
+public:
+    MyClassB() {  }
+    virtual ~MyClassB() {  }
+private:
+};
+
+class MyObject
+    :public egg::Object
+{
+public:
+    MyObject() { count++; }
+    virtual ~MyObject() { count--; }
+private:
+};
+
 
 TEST(smart_pointer, ref_ptr)
 {
@@ -42,6 +71,11 @@ TEST(smart_pointer, observer_ptr)
 
     mc1 = 0;
     EXPECT_TRUE(mc2.get().get() == 0);
+
+    //释放
+    mc1 = 0;
+    mc2 = 0;
+    EXPECT_EQ(0, count);
 }
 
 TEST(smart_pointer, observer_ptr2)
@@ -56,6 +90,14 @@ TEST(smart_pointer, observer_ptr2)
 
     mc1 = 0;
     EXPECT_TRUE(mc2.get().get() == 0);
+
+
+    //释放
+    mc2 = 0;
+    mc22 = 0;
+    mc1 = 0;
+    EXPECT_EQ(0, count);
+
 }
 
 
@@ -81,6 +123,17 @@ TEST(smart_pointer, container)
     wc3["a"] = p;
     wc3.insert(std::pair<std::string, egg::observer_ptr<MyClass>>("b", p));
 
+
+    //释放
+    mc1.clear();
+    mc2.clear();
+    mc3.clear();
+    wc1.clear();
+    wc2.clear();
+    wc3.clear();
+    p = 0;
+    EXPECT_EQ(0, count);
+
 }
 
 TEST(smart_pointer, assign)
@@ -94,11 +147,52 @@ TEST(smart_pointer, assign)
     egg::observer_ptr<MyClass> w1 = new MyClass();
     egg::observer_ptr<MyClass> w2 = new MyClass();
 
-    w1 = w2;
+    //这里交换会出现问题 没有任何强指针的对象 是无法被释放的
+    //w1 = w2;
 
     p1 = w1.get();
     p2 = w2.get();
 
+
+    //释放
+    p1 = 0;
+    p2 = 0;
+    w1 = 0;
+    w2 = 0;
+    EXPECT_EQ(0, count);
 }
 
 
+TEST(smart_pointer, base)
+{
+    egg::ref_ptr<MyClassA> p1 = new MyClassA();
+    egg::ref_ptr<MyClassB> p2 = new MyClassB();
+
+    std::map<std::string, egg::ref_ptr<MyClass> > list;
+
+    list["a"] = p1.get();
+    list["b"] = p2.get();
+
+    p1 = 0;
+    p2 = 0;
+
+    auto it = list.find("a");
+    if (it != list.end())
+    {
+        list.erase(it);
+    }
+    EXPECT_EQ(1, count);
+
+    //释放
+    list.clear();
+    EXPECT_EQ(0, count);
+}
+
+
+TEST(smart_pointer, object)
+{
+    egg::ref_ptr<MyObject> p1 = new MyObject();
+
+
+
+}

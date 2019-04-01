@@ -110,7 +110,9 @@ namespace egg
     private:
 
         //这里统计全部Object的实例
-        static std::set< observer_ptr<Object> > Objects;
+        // 因为构造函数包装好了 所以这里必须是裸指针
+        //static std::set< ref_ptr<Object> > Objects;
+        static std::set< Object* > Objects;
 
     private:
 
