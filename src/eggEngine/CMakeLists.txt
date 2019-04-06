@@ -3,18 +3,20 @@ SET(HEADER_PATH ${PROJECT_SOURCE_DIR}/include/${NIUBI_SETUP_TARGET_NAME})
 add_definitions(-DEGG_ENGINE_LIBRARY)
 
 
-SET(NIUBI_ASSET_SOURCES
+SET(NIUBI_ASSET_HEADERS
 
     ${HEADER_PATH}/Geometry.h
     ${HEADER_PATH}/Image.h
     ${HEADER_PATH}/Pass.h
     ${HEADER_PATH}/Material.h
     ${HEADER_PATH}/Program.h #不是asset 只能从xml读取
+    ${HEADER_PATH}/ProgramDefine.h
     ${HEADER_PATH}/Shader.h
     ${HEADER_PATH}/Texture.h
     ${HEADER_PATH}/Animation.h
     ${HEADER_PATH}/Scene.h
-    
+)
+SET(NIUBI_ASSET_SOURCES    
     Geometry.cpp
     Image.cpp
     Pass.cpp
@@ -25,13 +27,11 @@ SET(NIUBI_ASSET_SOURCES
     Animation.cpp
     Scene.cpp
 )
-SOURCE_GROUP(
-    "_ASSET"
-    FILES ${NIUBI_ASSET_SOURCES}
-)
+SOURCE_GROUP("_ASSET" FILES ${NIUBI_ASSET_HEADERS})
+SOURCE_GROUP("_ASSET" FILES ${NIUBI_ASSET_SOURCES})
 
 
-SET(NIUBI_COMPONENT_SOURCES
+SET(NIUBI_COMPONENT_HEADERS
     ${HEADER_PATH}/Component.h
     ${HEADER_PATH}/Components/ActorControler.h
     ${HEADER_PATH}/Components/MeshRender.h
@@ -44,7 +44,8 @@ SET(NIUBI_COMPONENT_SOURCES
     ${HEADER_PATH}/Components/Transfrom3D.h
     
     ${HEADER_PATH}/Components/GUI.h
-    
+)
+SET(NIUBI_COMPONENT_SOURCES    
     Component.cpp
     Components/ActorControler.cpp
     Components/MeshRender.cpp
@@ -59,14 +60,14 @@ SET(NIUBI_COMPONENT_SOURCES
     Components/GUI.cpp
     
 )
-SOURCE_GROUP(
-    "_COMPONENT"
-    FILES ${NIUBI_COMPONENT_SOURCES}
+SOURCE_GROUP("_COMPONENT" FILES ${NIUBI_COMPONENT_HEADERS})
+SOURCE_GROUP("_COMPONENT" FILES ${NIUBI_COMPONENT_SOURCES})
+
+SET(NIUBI_VFS_HEADERS
+    ${HEADER_PATH}/VirtualFileSystem.h
 )
 
 SET(NIUBI_VFS_SOURCES
-
-    ${HEADER_PATH}/VirtualFileSystem.h
 
     VirtualFileSystem.cpp
     VirtualFileSystem/NativeArchive.h
@@ -76,17 +77,16 @@ SET(NIUBI_VFS_SOURCES
     # VirtualFileSystem/SZPArchive.cpp
 )
 IF(ANDROID)
-    SET(NIUBI_VFS_SOURCES ${NIUBI_VFS_SOURCES} 
+    SET(NIUBI_VFS_SOURCES ${NIUBI_VFS_HEADERS} 
         VirtualFileSystem/AndroidAssetArchive.h
         VirtualFileSystem/AndroidAssetArchive.cpp
         )
 ENDIF(ANDROID)
-SOURCE_GROUP(
-    "_VFS"
-    FILES ${NIUBI_VFS_SOURCES}
-)
+SOURCE_GROUP("_VFS" FILES ${NIUBI_VFS_HEADERS})
+SOURCE_GROUP("_VFS" FILES ${NIUBI_VFS_SOURCES})
 
-SET(NIUBI_RENDERER_SOURCES
+
+SET(NIUBI_RENDERER_HEADERS
     #窗口系统 window
     ${HEADER_PATH}/Window.h
     
@@ -94,20 +94,19 @@ SET(NIUBI_RENDERER_SOURCES
 	${HEADER_PATH}/RenderState.h
     ${HEADER_PATH}/Renderer.h
     ${HEADER_PATH}/GraphicsContext.h
-    
-    
+)
+SET(NIUBI_RENDERER_SOURCES    
+
     Window.cpp
     RenderState.cpp
     Renderer.cpp
     GraphicsContext.cpp
 )
-SOURCE_GROUP(
-    "_RENDERER"
-    FILES ${NIUBI_RENDERER_SOURCES}
-)
+SOURCE_GROUP("_RENDERER" FILES ${NIUBI_RENDERER_HEADERS})
+SOURCE_GROUP("_RENDERER" FILES ${NIUBI_RENDERER_SOURCES})
 
 
-SET(NIUBI_RENDERING_SOURCES
+SET(NIUBI_RENDERING_HEADERS
 
     ${HEADER_PATH}/Composer.h
     ${HEADER_PATH}/RenderNode.h
@@ -116,6 +115,8 @@ SET(NIUBI_RENDERING_SOURCES
     ${HEADER_PATH}/RenderVisitor.h
     ${HEADER_PATH}/RenderUpdater.h
     ${HEADER_PATH}/RenderCullMode.h
+)
+SET(NIUBI_RENDERING_SOURCES
     
     Composer.cpp
     RenderNode.cpp
@@ -125,10 +126,8 @@ SET(NIUBI_RENDERING_SOURCES
     RenderUpdater.cpp
     RenderCullMode.cpp
 )
-SOURCE_GROUP(
-    "_RENDERING"
-    FILES ${NIUBI_RENDERING_SOURCES}
-)
+SOURCE_GROUP( "_RENDERING" FILES ${NIUBI_RENDERING_HEADERS})
+SOURCE_GROUP( "_RENDERING" FILES ${NIUBI_RENDERING_SOURCES})
 
 SET(NIUBI_3rdParty_SOURCES
 
@@ -148,6 +147,12 @@ SOURCE_GROUP(
 
 SET(NIUBI_SETUP_HEADERS
 
+    ${NIUBI_ASSET_HEADERS}
+    # ${NIUBI_COMPONENT_HEADERS}
+    ${NIUBI_VFS_HEADERS}
+    ${NIUBI_RENDERER_HEADERS}
+    ${NIUBI_RENDERING_HEADERS}
+    
     #引擎对象
     ${HEADER_PATH}/DefaultSetting.h
     ${HEADER_PATH}/Engine.h
@@ -231,3 +236,15 @@ target_link_libraries(${NIUBI_SETUP_TARGET_NAME}
 NIUBI_SETUP_INSTALL()
 NIUBI_SETUP_INSTALL_INCLUDE()
 NIUBI_SETUP_DOCUMENT()
+
+
+INSTALL(
+		FILES       ${NIUBI_COMPONENT_HEADERS}
+		DESTINATION ${INSTALL_INCDIR}/${NIUBI_SETUP_TARGET_NAME}/Components
+	)
+INSTALL(
+		FILES       ${NIUBI_VFS_HEADERS}
+		DESTINATION ${INSTALL_INCDIR}/${NIUBI_SETUP_TARGET_NAME}/Components
+	)    
+    
+    

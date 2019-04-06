@@ -16,6 +16,8 @@ SOURCE_GROUP( "_Design_Pattern" FILES ${Design_Pattern_SOURCE} )
 
 #基本工具
 set( Util_HEADERS
+    ${HEADER_PATH}/Log.h
+    ${HEADER_PATH}/SystemArg.h
     ${HEADER_PATH}/Timer.h
     ${HEADER_PATH}/StringUtil.h
     ${HEADER_PATH}/ThreadPool.h

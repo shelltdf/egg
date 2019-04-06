@@ -7,7 +7,7 @@
 #include <egg/Math.h>
 #include <egg/Object.h>
 #include <egg/Node.h>
-#include <eggEngine/View.h>
+//#include <eggEngine/View.h>
 
 #include <eggEngine/Resource.h>
 #include <eggEngine/RenderVisitor.h>
