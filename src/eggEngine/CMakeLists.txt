@@ -32,7 +32,7 @@ SOURCE_GROUP("_ASSET" FILES ${NIUBI_ASSET_SOURCES})
 
 
 SET(NIUBI_COMPONENT_HEADERS
-    ${HEADER_PATH}/Component.h
+    
     ${HEADER_PATH}/Components/ActorControler.h
     ${HEADER_PATH}/Components/MeshRender.h
     ${HEADER_PATH}/Components/SkeletonActorControler.h
@@ -46,7 +46,7 @@ SET(NIUBI_COMPONENT_HEADERS
     ${HEADER_PATH}/Components/GUI.h
 )
 SET(NIUBI_COMPONENT_SOURCES    
-    Component.cpp
+    
     Components/ActorControler.cpp
     Components/MeshRender.cpp
     Components/SkeletonActorControler.cpp
@@ -172,6 +172,7 @@ SET(NIUBI_SETUP_HEADERS
     
     #场景图 scene
     ${HEADER_PATH}/SceneNode.h
+	${HEADER_PATH}/Component.h
     
     #渲染关系图 composer
     # ${HEADER_PATH}/View.h
@@ -210,7 +211,8 @@ SET(NIUBI_SETUP_SOURCES
     ResourceManager.cpp
     
     SceneNode.cpp
-    
+	Component.cpp
+
     # View.cpp
     
     DefaultSetting.cpp
@@ -231,7 +233,8 @@ SET(NIUBI_SETUP_SOURCES
 NIUBI_SETUP_LIBRARY(ON)
 target_link_libraries(${NIUBI_SETUP_TARGET_NAME} 
         egg
-		${imgui_LIBRARY} 
+		#${imgui_LIBRARY} 
+		optimized ${imgui_LIBRARY}  debug ${imgui_LIBRARY_DEBUG}
         )
 NIUBI_SETUP_INSTALL()
 NIUBI_SETUP_INSTALL_INCLUDE()

@@ -97,7 +97,10 @@ T* T::create(const char* name){auto it = mFactoryMap.find(name);if(it!=mFactoryM
             else return 0;
         }
 
-    private:
+        const std::map<const std::string, egg::ref_ptr<CrteatorBase> >& getCrteatorMap() { return mCrteatorMap; }
+
+    protected:
+    //private:
 
         std::map<const std::string, egg::ref_ptr<CrteatorBase> > mCrteatorMap;
     };
