@@ -149,8 +149,7 @@ SET(NIUBI_SETUP_HEADERS
     ${Block_HEADERS}
     ${Event_HEADERS}
     ${Node_HEADERS}
-    ${Reflection_HEADERS}
-    ${Command_HEADERS}
+
     
     
     #宏定义
@@ -181,6 +180,8 @@ SET(NIUBI_SETUP_SOURCES
     ${Reflection_SOURCE}
     ${Command_SOURCE}
     
+    ${Reflection_HEADERS}
+    ${Command_HEADERS}
     
     #对象继承类
     Runtime.cpp
@@ -197,3 +198,15 @@ NIUBI_SETUP_LIBRARY(ON)
 NIUBI_SETUP_INSTALL()
 NIUBI_SETUP_INSTALL_INCLUDE()
 NIUBI_SETUP_DOCUMENT()
+
+INSTALL(
+		FILES       ${Reflection_HEADERS}
+		DESTINATION ${INSTALL_INCDIR}/${NIUBI_SETUP_TARGET_NAME}/Reflection
+	)    
+    
+INSTALL(
+		FILES       ${Command_HEADERS}
+		DESTINATION ${INSTALL_INCDIR}/${NIUBI_SETUP_TARGET_NAME}/Command
+	)    
+    
+    

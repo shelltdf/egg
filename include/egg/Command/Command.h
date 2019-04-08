@@ -26,14 +26,21 @@ namespace egg
         friend class Context;
 
     public:
-        Command(const char* name)
-            :nName(name)
+        Command(const char* name, const char* category = 0)
+            :mName(name)
         {
+            mCategory = category;
+            if (mCategory.size() == 0)
+            {
+                mCategory = name;
+            }
         }
 
         virtual ~Command() {}
 
-        std::string getName() { return nName; }
+        std::string getName() { return mName; }
+
+        std::string getCategory() { return mCategory; }
 
         //void pushParameter(std::string parameter)
         //{
@@ -46,7 +53,8 @@ namespace egg
 
         //private:
 
-        std::string nName;
+        std::string mName;
+        std::string mCategory;
         //std::vector<std::string> mParameter;
     };
 

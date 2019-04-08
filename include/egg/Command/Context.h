@@ -29,7 +29,7 @@ namespace egg
     {
     public:
         Context() {}
-        ~Context() {}
+        virtual ~Context() {}
 
         void registerDefault();
 
@@ -56,6 +56,27 @@ namespace egg
             }
             return 0;
         }
+
+        std::vector<std::string> getConmmandNameList()
+        {
+            std::vector<std::string> ret;
+            for (auto it = mCommand.begin(); it != mCommand.end(); it++)
+            {
+                ret.push_back(it->first);
+            }
+            return ret;
+        }
+
+        std::vector<std::string> getConmmandNameAndCategoryList()
+        {
+            std::vector<std::string> ret;
+            for (auto it = mCommand.begin(); it != mCommand.end(); it++)
+            {
+                ret.push_back(it->second->getCategory() + "|" + it->first);
+            }
+            return ret;
+        }
+
 
         void runConmmand(/*Context* context, */CommandData data)
         {
