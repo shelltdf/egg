@@ -194,6 +194,16 @@ namespace egg
 
         void registerDefaultObjectClass();
 
+        std::vector<std::string> getObjectNameList()
+        {
+            std::vector<std::string> ret;
+            for (auto it = mObjectFactory.begin(); it != mObjectFactory.end(); it++)
+            {
+                ret.push_back(it->first);
+            }
+            return ret;
+        }
+
     private:
 
         std::map< std::string , ref_ptr< ObjectFactory > > mObjectFactory;
