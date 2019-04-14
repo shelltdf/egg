@@ -1,0 +1,9 @@
+<program>
+  <template>
+    <uniform></uniform>
+    <texture></texture>
+  </template>
+  <shader_define></shader_define>
+  <shader_include type="vs"></shader_include>  
+  <shader_string type="vs"></shader_string>
+</program>

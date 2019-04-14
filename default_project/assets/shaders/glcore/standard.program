@@ -1,0 +1,18 @@
+<program>
+
+  <template>
+    <uniform name="color" type="float">1.0</uniform>
+    <texture name="color" path="standard_fs.texture"></texture>
+  </template>
+  
+  <shader_define>TEST=0</shader_define>
+  <shader_define>TESTDEF</shader_define>
+  <shader_link type="vs" path="standard_vs.shader"></shader_link>  
+  <shader_link type="fs" path="standard_fs.shader"></shader_link>
+  
+  <attribute name="egg_va_position" id="1"></attribute>
+  <attribute name="egg_va_normal" id="2"></attribute>
+  <attribute name="egg_va_uv0" id="3"></attribute>
+  <attribute name="egg_va_color0" id="4"></attribute>
+
+</program>

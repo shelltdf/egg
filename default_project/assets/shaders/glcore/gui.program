@@ -1,0 +1,10 @@
+<program>
+  
+  <shader_link type="vs" path="gui_vs.shader"></shader_link>  
+  <shader_link type="fs" path="gui_fs.shader"></shader_link>
+  
+  <attribute name="egg_va_position" id="1"></attribute>
+  <attribute name="egg_va_uv0" id="2"></attribute>
+  <attribute name="egg_va_color0" id="3"></attribute>
+
+</program>
