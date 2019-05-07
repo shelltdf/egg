@@ -283,8 +283,13 @@ if(EMSCRIPTEN)
 add_definitions(-DEMSCRIPTEN)
 endif(EMSCRIPTEN)
 
+if( EIGEN_FOUND )
 include_directories(${EIGEN_INCLUDE_DIR} )
+endif( EIGEN_FOUND )
+
+if( rapidxml_FOUND )
 include_directories(${rapidxml_INCLUDE_DIR} )
+endif( rapidxml_FOUND )
 
 #ºËÐÄ
 ADD_SUBDIRECTORY(src)
