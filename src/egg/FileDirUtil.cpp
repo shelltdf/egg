@@ -67,29 +67,35 @@ std::vector<std::string> getFilesInDir(std::string cate_dir)
 #else
 
 #ifdef WIN32
+
     egg::Path p(cate_dir);
     cate_dir = p.getPathWindows();
     cate_dir += "\\*";
 
     _finddata_t file;
-    long lf;
-    //输入文件夹路径  
-    if ((lf = _findfirst(cate_dir.c_str(), &file)) == -1)
-    {
-        std::cout << cate_dir << " not found!!!" << std::endl;
-    }
-    else
-    {
-        while (_findnext(lf, &file) == 0)
-        {
-            //输出文件名  
-            //cout<<file.name<<endl;  
-            if (strcmp(file.name, ".") == 0 || strcmp(file.name, "..") == 0)
-                continue;
-            files.push_back(file.name);
-        }
-    }
-    _findclose(lf);
+	intptr_t lf;
+
+	//搜索第一个文件失败  
+	if ((lf = _findfirst(cate_dir.c_str(), &file)) == -1)
+	{
+		std::cout << cate_dir << " not found!!!" << std::endl;
+		return files;
+	}
+
+	//遍历全部文件
+	do
+	{
+		//输出文件名  
+		//cout<<file.name<<endl;  
+		if (strcmp(file.name, ".") == 0 || strcmp(file.name, "..") == 0)
+			continue;
+		files.push_back(file.name);
+
+	} while (_findnext(lf, &file) == 0);
+
+	//关闭
+	_findclose(lf);
+
 #endif  
 
 #ifdef linux  

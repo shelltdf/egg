@@ -3,6 +3,7 @@
 #include <egg/Platform.h>
 #include <egg/Runtime.h>
 
+#include <egg/FileDirUtil.h>
 
 TEST(path, AbsolutePath)
 {
@@ -172,5 +173,12 @@ void test_path()
 
     //²âÊÔmel½Ó¿Ú
     str = egg::Path("|aaaaaaaaa").getPathMel(true, true);
+
+}
+
+TEST(path, filedirutil)
+{
+	std::vector<std::string> files = getFilesInDir("d:/");
+
 
 }
