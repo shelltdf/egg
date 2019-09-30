@@ -1,6 +1,8 @@
 SET(NIUBI_SETUP_TARGET_NAME test_app)
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
+include_directories( ${imgui_INCLUDE_DIR} )
+
 SET(NIUBI_SETUP_HEADERS
 
 	osgViewer.h

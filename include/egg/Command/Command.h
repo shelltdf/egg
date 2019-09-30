@@ -4,7 +4,7 @@
 #include <egg/Export.h>
 
 //#include <fstream>
-//#include <string>
+#include <string>
 #include <vector>
 //#include <map>
 

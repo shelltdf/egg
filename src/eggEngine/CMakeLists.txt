@@ -2,6 +2,7 @@ SET(NIUBI_SETUP_TARGET_NAME eggEngine)
 SET(HEADER_PATH ${PROJECT_SOURCE_DIR}/include/${NIUBI_SETUP_TARGET_NAME})
 add_definitions(-DEGG_ENGINE_LIBRARY)
 
+include_directories( ${imgui_INCLUDE_DIR} )
 
 SET(NIUBI_ASSET_HEADERS
 
@@ -77,7 +78,7 @@ SET(NIUBI_VFS_SOURCES
     # VirtualFileSystem/SZPArchive.cpp
 )
 IF(ANDROID)
-    SET(NIUBI_VFS_SOURCES ${NIUBI_VFS_HEADERS} 
+    SET(NIUBI_VFS_SOURCES ${NIUBI_VFS_SOURCES} 
         VirtualFileSystem/AndroidAssetArchive.h
         VirtualFileSystem/AndroidAssetArchive.cpp
         )
@@ -151,6 +152,9 @@ SET(NIUBI_SETUP_HEADERS
     ${NIUBI_RENDERER_HEADERS}
     ${NIUBI_RENDERING_HEADERS}
     
+    ${NIUBI_VFS_HEADERS}
+    ${NIUBI_COMPONENT_HEADERS}
+    
     #引擎对象
     ${HEADER_PATH}/DefaultSetting.h
     ${HEADER_PATH}/Engine.h
@@ -206,9 +210,6 @@ SET(NIUBI_SETUP_SOURCES
     ${NIUBI_RENDERING_SOURCES}
 
 
-	${NIUBI_COMPONENT_HEADERS}
-    ${NIUBI_VFS_HEADERS}
-    
     Resource.cpp
     ResourceManager.cpp
     

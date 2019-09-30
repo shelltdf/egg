@@ -5,6 +5,7 @@
 //#include <eggRuntime/Object.h>
 #include <egg/ref_ptr.h>
 #include <map>
+#include <string>
 
 namespace egg
 {
